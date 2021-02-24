@@ -1,0 +1,27 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://spring.io/guides/gs-producing-web-service"
+           targetNamespace="http://spring.io/guides/gs-producing-web-service" elementFormDefault="qualified">
+
+    <xs:element name="validateCreditCardDetailsRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="name" type="tns:creditCardDetails"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="validateCreditCardDetailsResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="isValid" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="creditCardDetails">
+        <xs:sequence>
+            <xs:element name="creditCardName" type="xs:string"/>
+            <xs:element name="creditCardNumber" type="xs:int"/>
+            <xs:element name="expirationDate" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
